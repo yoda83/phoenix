@@ -12,4 +12,13 @@ defmodule FullstackerWeb.PollController do
     render conn, "new.html", poll: poll
   end
 
+  def create(conn, %{"poll" => poll_params, "options" => options}) do
+    split_options = String.split(options, ", ")
+    with {:ok, poll} <- Fullstacker.create_poll_with_options(poll_params, split_options) do
+      conn
+      |> put_flash(:info, "Poll created successfully!")
+      |> redirect(to: poll_path(conn, :index))
+    end
+  end
+
 end

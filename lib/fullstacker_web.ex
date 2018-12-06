@@ -24,6 +24,7 @@ defmodule FullstackerWeb do
       import Plug.Conn
       import FullstackerWeb.Gettext
       alias FullstackerWeb.Router.Helpers, as: Routes
+      import FullstackerWeb.Router.Helpers
     end
   end
 
@@ -42,6 +43,7 @@ defmodule FullstackerWeb do
       import FullstackerWeb.ErrorHelpers
       import FullstackerWeb.Gettext
       alias FullstackerWeb.Router.Helpers, as: Routes
+      import FullstackerWeb.Router.Helpers
     end
   end
 
